@@ -21,6 +21,14 @@ export default function Home() {
           <p className="text-2xl text-white">
             {chat.data ? chat.data.content : "Loading tRPC query..."}
           </p>
+          <button
+            className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+            onSubmit={() => {
+              window.location.reload();
+            }}
+          >
+            Generate
+          </button>
         </div>
       </main>
     </>
