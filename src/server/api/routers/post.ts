@@ -1,5 +1,6 @@
 import { z } from "zod";
 import OpenAI from "openai";
+import { env } from "~/env.mjs";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
@@ -9,7 +10,7 @@ let post = {
 };
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: env.OPENAI_API_KEY,
 });
 
 export const postRouter = createTRPCRouter({
